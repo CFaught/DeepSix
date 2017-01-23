@@ -7,7 +7,7 @@ class AuthenticateUser
   end
 
   def call
-    user
+    JsonWebToken.encode(user_id: user.id) if user
   end
 
   private
@@ -15,20 +15,10 @@ class AuthenticateUser
   attr_accessor :email, :password
 
   def user
-    @user ||= User.find(decoded_auth_token[:user_id]) if decoded_auth_token
-    @user || errors.add(:token, 'Invalid token') && nil
-  end
-
-  def decoded_auth_token
-    @decoded_auth_token ||= JsonWebToken.decode(http_auth_header)
-  end
-
-  def http_auth_header
-    if headers['Authorization'].present?
-      return headers['Authorization'].split(' ').last
-    else
-      errors.add(:token, 'Missing token')
-    end
+    user = User.find_by_email(email)
+    return user if user && user.authenticate(password)
+    
+    errors.add :user_authentication, 'invalid credentials'
     nil
   end
 end
