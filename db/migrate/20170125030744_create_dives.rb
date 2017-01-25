@@ -4,7 +4,7 @@ class CreateDives < ActiveRecord::Migration[5.0]
       t.integer :dive_number
       t.string :date
       t.string :location
-      t.boolean :first_dive, default: false
+      t.boolean :first_dive, default: true
       t.string :time_in
       t.string :time_out
       t.integer :psi_in

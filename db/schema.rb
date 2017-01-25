@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 20170125030744) do
     t.integer  "dive_number"
     t.string   "date"
     t.string   "location"
-    t.boolean  "first_dive",    default: false
+    t.boolean  "first_dive",    default: true
     t.string   "time_in"
     t.string   "time_out"
     t.integer  "psi_in"
@@ -36,8 +36,8 @@ ActiveRecord::Schema.define(version: 20170125030744) do
     t.integer  "air_temp"
     t.integer  "water_temp"
     t.string   "dive_type"
-    t.datetime "created_at",                    null: false
-    t.datetime "updated_at",                    null: false
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
   end
 
   create_table "users", force: :cascade do |t|
