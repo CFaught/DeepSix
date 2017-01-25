@@ -4,4 +4,10 @@ Rails.application.routes.draw do
 
   # For jwt authentication
   post 'authenticate', to: 'authentication#authenticate'
+
+  namespace :api do
+    namespace :v1 do
+      resources :dives
+    end
+  end
 end
