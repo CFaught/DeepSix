@@ -4,7 +4,8 @@
 
   function DivesService ($http) {
     return {
-      all
+      all,
+      getDetail
     }
 
     function all() {
@@ -14,7 +15,18 @@
           .then(function(res) {
             return res.data;
           }).catch(function(err) {
-            return err.message;
+            console.log(err.message);
+          })
+    }
+
+    function getDetail(id) {
+      var api = "/api/v1";
+
+      return $http.get(api + "/dives/" + id)
+          .then(function(res) {
+            return res.data;
+          }).catch(function(err) {
+            console.log(err.message);
           })
     }
   }
