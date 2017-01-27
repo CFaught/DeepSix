@@ -4,13 +4,14 @@
   angular
     .module('app')
     .config(function($stateProvider, $urlRouterProvider) {
-      $stateProvider
-        .state('home', {
-            url: '/',
-            templateUrl: 'home/_home.html',
-            controller: 'HomeController as vm'
-        })
-        $urlRouterProvider.otherwise('/')
-    })
 
+      $stateProvider
+        .state('dives', {
+            url: '/',
+            templateUrl: 'dives/_dives.html',
+            controller: 'DivesController as vm'
+        })
+
+      $urlRouterProvider.otherwise('/')
+    })
 }());
