@@ -1,20 +1,66 @@
 <div ng-controller="DivesController as vm" class="container-fluid">
-  <h1>Dive No. {{ vm.dive.dive_number }}</h1>
+  <h2>Dive No. {{ vm.dive.dive_number }}</h2>
   <div>Date: <span data-ng-bind="vm.dive.date | date:'longDate'"></span></div>
   <div>Coordinates: {{ vm.dive.location }}</div>
   <hr>
 
   <div class="row">
-    <div class="col-md-4">
+    <div class="col-md-2">
       <div> Time in: {{ vm.dive.time_in }} </div>
       <div> PSI in: {{ vm.dive.psi_in }} </div>
+      <br>
+      <h4>Buddy:</h4>
+      <div> {{ vm.dive.buddy }} </div>
+      <br>
+      <h4>Dive Type:</h4>
+      <div> {{ vm.dive.dive_type }} </div>
     </div>
     <div class="col-md-4">
-
+      <div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PG In:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;PG Out:</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ vm.dive.pg_in }}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ vm.dive.pg_out}}</div>
+        <div>____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____________</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/_____________ /</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Depth: {{ vm.dive.depth }} ft.</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Bottom Time: {{ vm.dive.time_at_depth }} min.</div>
+      </div>
     </div>
-    <div class="col-md-4">
+    <div class="col-md-3">
       <div> Time out: {{ vm.dive.time_out }} </div>
       <div> PSI out: {{ vm.dive.psi_out }} </div>
+      <br>
+      <div>RNT: {{ vm.dive.rnt }}</div>
+      <div>ABT: {{ vm.dive.abt }}</div>
+      <div>________</div>
+      <div>TBT: {{ vm.dive.tnt }}</div>
+    </div>
+  </div>
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <h3>Equipment:</h3>
+        <p>{{ vm.dive.equipment }}</p>
+      </div>
+      <div>
+        <h3>Notes:</h3>
+        <p>{{ vm.dive.notes }}</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div>
+        <h3>Visibility:</h3>
+        <p>Surface: {{ vm.dive.vis_surface }}</p>
+        <p>Bottom: {{ vm.dive.vis_bottom }}</p>
+      </div>
+      <div>
+        <h3>Temperature:</h3>
+        <p>Air: {{ vm.dive.air_temp }}</p>
+        <p>Water: {{ vm.dive.water_temp }}</p>
+      </div>
     </div>
   </div>
 </div>
