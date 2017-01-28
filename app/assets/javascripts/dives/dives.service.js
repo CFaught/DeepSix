@@ -5,7 +5,8 @@
   function DivesService ($http) {
     return {
       all,
-      getDetail
+      getDetail,
+      create
     }
 
     function all() {
@@ -23,6 +24,26 @@
       var api = "/api/v1";
 
       return $http.get(api + "/dives/" + id)
+          .then(function(res) {
+            return res.data;
+          }).catch(function(err) {
+            console.log(err.message);
+          })
+    }
+
+    function create(diveInfo) {
+      var api = "/api/v1";
+
+      var req = {
+        method: "POST",
+        url: api + "/dives",
+        headers: {
+          'Content-Type': "application/json"
+        },
+        data: {dive: diveInfo}
+      }
+
+      return $http(req)
           .then(function(res) {
             return res.data;
           }).catch(function(err) {

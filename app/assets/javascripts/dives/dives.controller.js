@@ -5,26 +5,31 @@
   function DivesController (DivesService, $stateParams) {
     var vm = this;
 
-    vm.formatDate = formatDate;
+    vm.createDive = createDive;
 
     DivesService.all()
-        .then(function(data) {
-          vm.dives = data;
-        }).catch(function(err) {
-          err.message;
-        })
+      .then(function(data) {
+        vm.dives = data;
+      }).catch(function(err) {
+        err.message;
+      })
 
     if ($stateParams.id) {
       DivesService.getDetail($stateParams.id)
-          .then(function(data) {
-            vm.dive = data;
-          })
+        .then(function(data) {
+          vm.dive = data;
+        })
+    }
+
+    function createDive() {
+      DivesService.create(vm.dive)
+        .then(function(dive) {
+          vm.dives.push(dive)
+        })
     }
   }
 
-  function formatDate(date) {
-    moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a");
-  }
+
 
   angular
     .module('app')

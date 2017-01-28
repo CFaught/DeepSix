@@ -1,0 +1,87 @@
+<h2>New Dive Entry</h2>
+
+<form ng-submit="vm.createDive()" class="container-fluid" id="logEntry">
+  <label for="dive_number">Dive No.</label>
+  <input type="text" ng-model="vm.dive.dive_number"><br>
+  <label for="date">Date:</label>
+  <input type="date" ng-model="vm.dive.date"><br>
+  <label for="location">Location:</label>
+  <input type="text" ng-model="vm.dive.location"><br>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-3">
+      <label for="time_in">Time In:</label>
+      <input type="number" ng-model="vm.dive.time_in"><br>
+      <label for="psi_in">PSI In:</label>
+      <input type="number" ng-model="vm.dive.psi_in"><br>
+      <br>
+      <label for="buddy">Buddy:</label>
+      <input type="text" ng-model="vm.dive.buddy"><br>
+      <br>
+      <label for="dive_type">Dive Type:</label>
+      <input type="text" ng-model="vm.dive.dive_type"><br>
+    </div>
+
+    <div class="col-md-5">
+      <div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="pg_in">PG In:</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="pg_out">PG Out:</label></div>
+        <div><input type="text" ng-model="vm.dive.pg_in" class="small_input">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="text" ng-model="vm.dive.pg_out" class="small_input"></div>
+        <div>____________&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;_____________</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;/_____________ /</div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<label for="depth">Depth (ft.):</label> <input type="text" ng-model="vm.dive.depth" class="small_input"></div>
+        <div>&nbsp;&nbsp;&nbsp;&nbsp;<label for="depth">Bottom Time (min.):</label> <input type="number" ng-model="vm.dive.time_at_depth" class="small_input"></div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <label for="time_out">Time Out:</label>
+      <input type="number" ng-model="vm.dive.time_out"><br>
+      <label for="psi_out">PSI Out:</label>
+      <input type="number" ng-model="vm.dive.psi_out"><br>
+      <br>
+      <label for="rnt">RNT:</label>
+      <input type="number" ng-model="vm.dive.rnt" class="small_input"><br>
+      <label for="abt">ABT:</label>
+      <input type="number" ng-model="vm.dive.abt" class="small_input"><br>
+      <div>__________________</div>
+      <label for="tnt">TBT:</label>
+      <input type="number" ng-model="vm.dive.tnt" class="small_input"><br>
+    </div>
+  </div>
+
+  <hr>
+  <div class="row">
+    <div class="col-md-6">
+      <div>
+        <label for="equipment">Equipment:</label>
+        <input type="text" ng-model="vm.dive.equipment"><br>
+      </div>
+      <div>
+        <label for="notes">Notes:</label><br>
+        <textarea ng-model="vm.dive.notes" form="logEntry"></textarea>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div>
+        <h4>Visibility (ft.):</h4>
+        <label for="vis_surface">Surface:</label>
+        <input type="number" ng-model="vm.dive.vis_surface"><br>
+        <label for="vis_bottom">Bottom:</label>
+        <input type="number" ng-model="vm.dive.vis_bottom"><br>
+      </div>
+      <div>
+        <h4>Temperature:</h4>
+        <label for="air_temp">Air:</label>
+        <input type="number" ng-model="vm.dive.air_temp"><br>
+        <label for="water_temp">Water:</label>
+        <input type="number" ng-model="vm.dive.water_temp"><br>
+      </div>
+    </div>
+  </div>
+
+  <input type="submit" value="Create Dive Entry">
+</form>

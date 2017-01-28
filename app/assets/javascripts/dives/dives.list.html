@@ -1,6 +1,8 @@
 <div ng-controller="DivesController as vm">
   <h1><a ui-sref="dives">Dives</a></h1>
-  
+
+  <a ui-sref="dives.new">Add New Entry</a>
+
   <div ng-repeat="dive in vm.dives">
     <a ui-sref="dives.detail({ id: dive.id })">Dive No. {{ dive.dive_number }} - Date: {{ dive.date | date:'longDate' }}</a>
   </div>
