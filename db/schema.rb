@@ -10,11 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170125030744) do
+ActiveRecord::Schema.define(version: 20170127232856) do
 
   create_table "dives", force: :cascade do |t|
     t.integer  "dive_number"
-    t.string   "date"
+    t.datetime "date"
     t.string   "location"
     t.boolean  "first_dive",    default: true
     t.string   "time_in"

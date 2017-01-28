@@ -1,4 +1,20 @@
-<div ng-controller="DivesController as vm">
+<div ng-controller="DivesController as vm" class="container-fluid">
   <h1>Dive No. {{ vm.dive.dive_number }}</h1>
-  <div>Date: <span data-ng-bind="vm.dive.date | date:'medium'"></span></div>
+  <div>Date: <span data-ng-bind="vm.dive.date | date:'longDate'"></span></div>
+  <div>Coordinates: {{ vm.dive.location }}</div>
+  <hr>
+
+  <div class="row">
+    <div class="col-md-4">
+      <div> Time in: {{ vm.dive.time_in }} </div>
+      <div> PSI in: {{ vm.dive.psi_in }} </div>
+    </div>
+    <div class="col-md-4">
+
+    </div>
+    <div class="col-md-4">
+      <div> Time out: {{ vm.dive.time_out }} </div>
+      <div> PSI out: {{ vm.dive.psi_out }} </div>
+    </div>
+  </div>
 </div>
