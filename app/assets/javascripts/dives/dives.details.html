@@ -1,4 +1,4 @@
-<div ng-controller="DivesController as vm" class="container-fluid">
+<div class="container-fluid">
   <h2>Dive No. {{ vm.dive.dive_number }}</h2>
   <div>Date: <span data-ng-bind="vm.dive.date | date:'longDate'"></span></div>
   <div>Coordinates: {{ vm.dive.location }}</div>
@@ -63,4 +63,5 @@
       </div>
     </div>
   </div>
+  <button ng-click="vm.deleteDive()">Delete</button>
 </div>

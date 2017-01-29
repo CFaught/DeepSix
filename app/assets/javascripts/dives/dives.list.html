@@ -3,7 +3,7 @@
 
   <a ui-sref="dives.new">Add New Entry</a>
 
-  <div ng-repeat="dive in vm.dives">
+  <div ng-repeat="dive in dives">
     <a ui-sref="dives.detail({ id: dive.id })">Dive No. {{ dive.dive_number }} - Date: {{ dive.date | date:'longDate' }}</a>
   </div>
 

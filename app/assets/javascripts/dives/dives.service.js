@@ -6,7 +6,8 @@
     return {
       all,
       getDetail,
-      create
+      create,
+      deleteDive
     }
 
     function all() {
@@ -41,6 +42,22 @@
           'Content-Type': "application/json"
         },
         data: {dive: diveInfo}
+      }
+
+      return $http(req)
+          .then(function(res) {
+            return res.data;
+          }).catch(function(err) {
+            console.log(err.message);
+          })
+    }
+
+    function deleteDive(id) {
+      var api = "/api/v1";
+
+      var req = {
+        method: "DELETE",
+        url: api + "/dives/" + id
       }
 
       return $http(req)
