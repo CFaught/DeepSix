@@ -26,3 +26,7 @@ textarea {
   -o-transition: border 0.3s;
   transition: border 0.3s;
 }
+
+.error {
+  color: red;
+}
