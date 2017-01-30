@@ -5,7 +5,7 @@
  * Date: 25-Jan-2016
  *
  * I claim no rights to the NOAA dive tables that are
- * referenced in this program. This is just a script
+ * referenced in this script. This is just a script
  * that makes the tables digitally interactive.
  ****************************************************/
 
@@ -184,16 +184,3 @@ var DiveTables = {
     return newLetter;
   }
 }
-
-// calculateDive: function(){
-//   var letter = document.getElementById('letter');
-//   var newLetter = document.getElementById('newLetter');
-//
-//   var depth = document.forms["form"]["depth"].value;
-//   var bottomTime = document.forms["form"]["bottomTime"].value;
-//   var surfaceInt = document.forms["form"]["surfaceInt"].value
-//   var initLetter = letterGroup(Number(depth), Number(bottomTime));
-//   var nextLetter = surfaceIntLetter(surfaceInt, initLetter);
-//   letter.innerHTML =  initLetter;
-//   newLetter.innerHTML =  nextLetter;
-// }
