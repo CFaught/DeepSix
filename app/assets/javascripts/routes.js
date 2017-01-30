@@ -6,6 +6,11 @@
     .config(function($stateProvider, $urlRouterProvider) {
 
       $stateProvider
+        .state('planning', {
+            url: '/planning',
+            templateUrl: 'plan/planning.html',
+            controller: 'PlanController as vm'
+        })
         .state('dives', {
             url: '/',
             templateUrl: 'dives/dives.list.html',

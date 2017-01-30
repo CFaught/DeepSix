@@ -1,21 +1,29 @@
 <div ng-controller="DivesController as vm">
-  <h1><a ui-sref="dives">Dives</a></h1>
-  <input type="text" ng-model="buddy" placeholder="Filter by buddy"><br>
-  <a ui-sref="dives.new">Add New Entry</a>
+  <div class="row">
+    <div class="col-md-6">
+      <h1><a ui-sref="dives">Dives</a></h1>
+      <input type="text" ng-model="buddy" placeholder="Filter by buddy"><br>
+      <a ui-sref="dives.new">Add New Entry</a>
 
-  <div ng-repeat="dive in vm.dives | filter:buddy">
-    <a ui-sref="dives.detail({ id: dive.id })">Dive No. {{ dive.dive_number }} - Date: {{ dive.date | date:'longDate' }}</a>
-  </div>
+      <div ng-repeat="dive in vm.dives | filter:buddy">
+        <a ui-sref="dives.detail({ id: dive.id })">Dive No. {{ dive.dive_number }} - Date: {{ dive.date | date:'longDate' }}</a>
+      </div>
 
-  <div>
-    <ul class="pagination">
-      <li ng-if="vm.page > 0">
-        <a href="" ng-click="vm.lastPage()">Previous <<</a>
-      </li>
-      <li ng-if="vm.page < vm.totalPages - 1">
-        <a href="" ng-click="vm.nextPage()"> >> Next</a>
-      </li>
-    </ul>
+      <div>
+        <ul class="pagination">
+          <li ng-if="vm.page > 0">
+            <a href="" ng-click="vm.lastPage()">Previous <<</a>
+          </li>
+          <li ng-if="vm.page < vm.totalPages - 1">
+            <a href="" ng-click="vm.nextPage()"> >> Next</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <a ui-sref="planning">Plan a dive</a>
+    </div>
   </div>
 
   <hr>
