@@ -85,6 +85,16 @@
           $state.go('dives')
         })
     }
+
+    $scope.calculate = function() {
+      var bottomTime = Number(vm.dive.time_out) - Number(vm.dive.time_in);
+
+      vm.dive.pg_in = "A";
+      vm.dive.abt = bottomTime;
+      vm.dive.time_at_depth = bottomTime;
+      vm.dive.pg_out = DiveTables.letterGroup(Number(vm.dive.depth), Number(bottomTime));
+      vm.dive.tnt = bottomTime + Number(vm.dive.rnt);
+    }
   }
 
 
