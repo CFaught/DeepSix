@@ -9,6 +9,7 @@
 
     vm.createDive = createDive;
     vm.deleteDive = deleteDive;
+    vm.editDive = editDive;
 
     var PAGE_LENGTH = 4;
 
@@ -58,8 +59,13 @@
           $state.go('dives.detail', dive)
           $scope.$parent.paginate();
         })
+    }
+
+    function editDive() {
+      DivesService.update(vm.dive)
         .then(function(dive) {
-          vm.dive = {}
+          vm.dive = dive
+          $state.go('dives.detail', dive)
         })
     }
 

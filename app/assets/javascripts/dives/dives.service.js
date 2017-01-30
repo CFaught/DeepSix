@@ -7,7 +7,8 @@
       all,
       getDetail,
       create,
-      deleteDive
+      deleteDive,
+      update
     }
 
     function all() {
@@ -38,6 +39,26 @@
       var req = {
         method: "POST",
         url: api + "/dives",
+        headers: {
+          'Content-Type': "application/json"
+        },
+        data: {dive: diveInfo}
+      }
+
+      return $http(req)
+          .then(function(res) {
+            return res.data;
+          }).catch(function(err) {
+            console.log(err.message);
+          })
+    }
+
+    function update(diveInfo) {
+      var api = "/api/v1";
+
+      var req = {
+        method: "PATCH",
+        url: api + "/dives/" + diveInfo.id,
         headers: {
           'Content-Type': "application/json"
         },

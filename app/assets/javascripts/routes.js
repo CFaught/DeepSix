@@ -16,6 +16,11 @@
           templateUrl: 'dives/dives.new.html',
           controller: 'DivesController as vm'
         })
+        .state('dives.edit', {
+          url: 'dives/:id/edit',
+          templateUrl: 'dives/dives.edit.html',
+          controller: 'DivesController as vm'
+        })
         .state('dives.detail', {
           url: 'dives/:id',
           templateUrl: 'dives/dives.details.html',

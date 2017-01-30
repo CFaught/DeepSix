@@ -7,14 +7,17 @@
     <a ui-sref="dives.detail({ id: dive.id })">Dive No. {{ dive.dive_number }} - Date: {{ dive.date | date:'longDate' }}</a>
   </div>
 
-  <ul class="pagination">
-    <li ng-if="vm.page > 0">
-      <a href="" ng-click="vm.lastPage()">Previous <<</a>
-    </li>
-    <li ng-if="vm.page < vm.totalPages - 1">
-      <a href="" ng-click="vm.nextPage()"> >> Next</a>
-    </li>
-  </ul>
+  <div>
+    <ul class="pagination">
+      <li ng-if="vm.page > 0">
+        <a href="" ng-click="vm.lastPage()">Previous <<</a>
+      </li>
+      <li ng-if="vm.page < vm.totalPages - 1">
+        <a href="" ng-click="vm.nextPage()"> >> Next</a>
+      </li>
+    </ul>
+  </div>
+
   <hr>
 
   <div class="divesDetails">
