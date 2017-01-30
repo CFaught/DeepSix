@@ -7,6 +7,8 @@
     $scope.allDives;
     vm.dives;
 
+    $scope.buddy;
+
     vm.createDive = createDive;
     vm.deleteDive = deleteDive;
     vm.editDive = editDive;
